@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;600&display=swap" rel="stylesheet">
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="main.css">
 	<!-- JS -->
@@ -13,28 +15,62 @@
 <body>
 	<header>
       <h1>Tamagotchi</h1>
-      <button id="start-game">Hatch</button>
     </header>
+	
+	<!-- Game Play and Pet Levels -->
+	<section>
+		<button id="start-game">Hatch</button>
+		<!-- Food Levels -->
+		<i id="foodlevel" class="fas fa-utensils">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div></i>
 
-	<section class="pet-levels">
-	<!-- Food Levels -->
-	<a href="#" class="food">
-		<i class="fas fa-utensils"></i>
-	</a>
-	<!-- Energy Levels -->
-	<a href="#" class="energy">
-		<i class="fas fa-sun"></i>
-	</a>
-	<!-- Play Levels -->
-	<a href="#" class="play">
-		<i class="far fa-laugh-beam"></i>
-	</a>
+		<!-- Energy Levels -->
+		<i id="energylevel" class="fas fa-sun">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		</i>
+		</a>
+		<!-- Play Levels -->
+		<i id="playlevel" class="far fa-laugh-beam">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		</i>
+		</a>
 	</section>
 
+	<div id='device-back'></div>
+	<div id="device-screen"></div>
+
+
 	<div class="gameplay">
-	<button id="feed">Feed</button>
-	<button id="sleep">Sleep</button>
-	<button id="play">Play</button>
+		<button id="feed">FEED</button>
+		<button id="sleep">SLEEP</button>
+		<button id="play">PLAY</button>
 	</div>
 
 </body>
