@@ -15,6 +15,14 @@
 // Save Button in variable
 // Add click event listener to button
 
+
+// App State
+let time = 10;
+const hatchPet = [];
+
+// Cached DOM Elements 
+const button = document.getElementById('hatch');
+
 // -------------- Tamagotchi Class
 class Tamagotchi {
 	constructor(id, food, energy, play, age){
@@ -25,44 +33,6 @@ class Tamagotchi {
 		this.age = age || 1;
 	}
 }
-
-// const pet = new Tamagotchi('cat');
-// console.log(pet);
-
-const hatchPet = [];
-const button = document.getElementById('hatch');
-
-
-button.addEventListener('click', newPet);
-
-function newPet () {
-	hatchPet.push(new Tamagotchi('Cat'));
-
-	document.getElementById('hatch').remove('hatch');
-	createIcons();
-	
-	console.log(hatchPet);
-}
-
-// -------------- Create Icons
-
-function createIcons(){
-	const i1 = document.createElement('icon');
-	const i2 = document.createElement('icon');
-	const i3 = document.createElement('icon');
-
-	const ls = document.querySelector('section');
-
-  	i1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
-		<meter></meter></i>`;
-	i2.innerHTML = `<i id="energylevel" class="fas fa-sun"><meter></meter></i>`;
-	i3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><meter></meter></i>`;
-  	
-  	ls.appendChild(i1);
-  	ls.appendChild(i2);
-  	ls.appendChild(i3);
-}
-
 
 // -------------- Feed Class
 // class Feed {
@@ -89,4 +59,71 @@ function createIcons(){
 // 	constructor(level){
 // 		super(level)
 // 	}
+// }
+
+
+button.addEventListener('click', startCountdown);
+
+function startCountdown() {
+  const timer = setInterval(function () {
+    if (time > 0) {
+      time--;
+      updateCountdown();
+    } else {
+      clearInterval(timer);
+      newPet();
+  }
+ }, 1000);
+} 
+
+function updateCountdown() {
+  document.getElementById('countdown').innerText = `${time}s`;
+}
+
+function newPet () {
+	hatchPet.push(new Tamagotchi('Cat'));
+
+	button.remove(button);
+	document.getElementById('countdown').remove('countdown');
+	createIcons();
+	// createButtons();
+	
+	console.log(hatchPet);
+}
+
+// -------------- Create Icons & Buttons
+
+function createIcons(){
+	const icon1 = document.createElement('icon');
+	const icon2 = document.createElement('icon');
+	const icon3 = document.createElement('icon');
+
+	const iconSection = document.querySelector('section');
+
+  	icon1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
+		<meter id='m1' value='10'></meter></i>`;
+	icon2.innerHTML = `<i id="energylevel" class="fas fa-sun"><meter id='m2' value='10'></meter></i>`;
+	icon3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><meter id='m3' value='10'></meter></i>`;
+  	
+  	iconSection.appendChild(icon1);
+  	iconSection.appendChild(icon2);
+  	iconSection.appendChild(icon3);
+}
+
+// function createButtons(){
+// 	const b1 = document.createElement('button');
+// 	const b2 = document.createElement('button');
+// 	const b3 = document.createElement('button');
+
+// 	b1.innerHTML = `<button id="feed">FEED</button>`;
+// 	b2.innerHTML = `<button id="sleep">SLEEP</button>`;
+// 	b3.innerHTML = `<button id="play">PLAY</button>`;
+
+// 	const buttonSection = document.getElementById('gameplay');
+
+// 	buttonSection.appendChild(b1);
+// 	buttonSection.appendChild(b2);
+// 	buttonSection.appendChild(b3);
+
+
 // }
