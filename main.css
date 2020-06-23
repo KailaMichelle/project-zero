@@ -1,5 +1,7 @@
+/* DOCUMENT STYLING */
 * {
 	font-family: 'MuseoModerno', cursive;
+	box-sizing: border-box;
 }
 
 body {
@@ -8,38 +10,95 @@ body {
  	flex-direction: column;
 }
 
-#start-game{
+
+/* LEFT SIDE CONTENT */
+.leftside {
+	display: flex;
+	flex-direction: column;
+}
+
+#hatch{
 	border-radius: 10px;
-	font-size: 40px;
+	font-size: 20px;
 	display:flex;
-	margin: 10px;
 	padding: 10px;
 	transition: all 0.2s;
 	color: #DEF2F1;
-	background-color: #687271;;
+	background-color: #687271;
+	width: 80px;
+	height: 60px;
 }
- #start-game:hover{
+ #hatch:hover{
  	color: #687271;
 	background-color: #DEF2F1;
  }
 
 #foodlevel{
 	color: #687271;
+	font-size:25px;
+	padding: 20px;
+	position: relative;
 }
 
 #energylevel{
 	color: #687271;
+	font-size:25px;
+	padding: 20px;
 }
 
 #playlevel{
 	color: #687271;
+	font-size:25px;
+	padding: 20px;
 }
 
 
+/* GAME CONTAINER */
+.device{
+	display:flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+#device-back {
+	width: 600px;
+    height: 700px;
+    background: #AFBFBE;
+    border-radius: 70%;
+    display: flex;
+    align-self: center;
+	position: absolute; 
+}
+
+#device-screen {
+	width: 350px;
+    height: 380px;
+    background: #DEF2F1;
+    display: flex;
+    align-self: center;
+	position: absolute; 
+
+}
+
+#egg {
+	color:#687271;
+	font-size: 180px;
+	align-self: center;
+	margin-left: 100px;
+}
+
+#cat {
+	color:#687271;
+	font-size: 180px;
+	align-self: center;
+	margin-left: 70px;
+}
+
+
+/* PLAY BUTTONS */
 .gameplay {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	transition: all 0.2s;
 }
 
@@ -49,9 +108,12 @@ body {
 	font-size: 1.3em;
 	border-radius: 50%;
 	padding: 10px;
-	margin: 10px;
+	margin-top: 210px;
+	margin-right: 20px;
+	margin-left: 20px;
 	width: 80px;
 	height: 80px;
+	position: relative;
 }
 
 #sleep:hover{
@@ -65,9 +127,10 @@ body {
 	font-size: 1.3em;
 	border-radius: 50%;
 	padding: 10px;
-	margin: 10px;
+	margin-top: 210px;
 	width: 80px;
 	height: 80px;
+	position: relative;
 }
 
 #play:hover{
@@ -81,9 +144,10 @@ body {
 	font-size: 1.3em;
 	border-radius: 50%;
 	padding: 10px;
-	margin: 10px;
+	margin-top: 210px;
 	width: 80px;
 	height: 80px;
+	position: relative;
 }
 
 #feed:hover{
