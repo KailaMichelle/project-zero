@@ -20,34 +20,6 @@ class Tamagotchi {
 	}
 }
 
-// -------------- Feed Class
-// class Feed {
-// 	constructor(level){
-// 		this.level = level;
-// 	}
-// 	function changeLevel(){
-
-// 	}
-// }
-
-// -------------- Sleep Class
-// class Sleep extends Feed {
-// 	constructor(level){
-// 		super(level)
-// 	}
-// 	function turnOffLight(){
-
-// 	}
-// }
-
-// -------------- Play Class
-// class Play extends Feed {
-// 	constructor(level){
-// 		super(level)
-// 	}
-// }
-
-
 // -------------- Event Listeners 
 
 // Hatch Button
@@ -211,31 +183,18 @@ function playLevel(pet){
 
 
 // -------------- Game Play - User controlled
-// const levelsArray = ['h', 'e', 'p']
-// let randomFunc = '';
-
-// function randomLevel(){
-// 	randomFunc = levelsArray[Math.floor(Math.random() * levelsArray.length)];
-// 	if (randomFunc === 'h'){
-// 		hungerLevel(pet[0]);
-// 		console.log('h');
-// 	} else if (randomFunc === 'e'){
-// 		energyLevel(pet[0]);
-// 		console.log('e');
-// 	} else if (randomFunc === 'p'){
-// 		playLevel(pet[0]);
-// 		console.log('p');
-// 	}
-// }
-
 
 function feed(){
 	foodUpdate(pet[0]);
 }
 
 function foodUpdate(pet){
-	const value = (document.getElementById('progress1').value = (pet.food + (Math.floor(Math.random() * 2) + 1)));
-	pet.food = value;
+	if (pet.food < 10){
+		const value = (document.getElementById('progress1').value = (pet.food + (Math.floor(Math.random() * 2) + 1)));
+		pet.food = value;
+	} else {
+		window.alert(`Your pet is full!`)
+	}
 }
 
 function sleep(){
@@ -243,8 +202,12 @@ function sleep(){
 }
 
 function sleepUpdate(pet){
-	const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
-	pet.energy = value;
+	if (pet.energy < 10){
+		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
+		pet.energy = value;
+	} else {
+		window.alert(`Your pet isn't tired!`)
+	}
 }
 
 function play(){
@@ -252,14 +215,10 @@ function play(){
 }
 
 function playUpdate(pet){
-	const value = (document.getElementById('progress3').value = (pet.play + (Math.floor(Math.random() * 2) + 1)));
-	pet.play = value;
+	if (pet.play < 10){
+		const value = (document.getElementById('progress3').value = (pet.play + (Math.floor(Math.random() * 2) + 1)));
+		pet.play = value;
+	} else {
+		window.alert(`Your pet doesn't want to play`)
+	}
 }
-
-
-
-
-
-
-
-
