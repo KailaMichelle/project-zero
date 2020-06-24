@@ -1,45 +1,24 @@
-// ----------------- Code Organization -----------------
-
-// 1) 3rd Party Libraries (tools we are installing)(like jQuery)
-// 2) Constants (source of arguments)
-// 3) App State (Global scoped Variables - everything application need to know)
-// 4) Cached DOM Elements 
-// 5 or 6) Event Listeners 
-// 5 or 6) Functions 
-	// (functions will have to come first if it's an expression)
-
-
-// ----- FIRST STEPS ------
-// START GAME ACTION
-// Select Element (button)
-// Save Button in variable
-// Add click event listener to button
-
-
 // App State
-let time = 10;
-// let age = 1;
-let foodMeter = 10;
-// let sleepMeter = 10;
-// let playMeter = 10;
-
+let time = 2;
+let age = 1;
 const pet = [];
-const rightside = document.getElementById('rightside');
 
 // Cached DOM Elements 
-const button = document.getElementById('hatch');
+const rightside = document.getElementById('rightside');
+const hatchButton = document.getElementById('hatch');
+const foodButton = document.getElementById('feed');
+const sleepButton = document.getElementById('sleep');
+const playButton = document.getElementById('play');
 
 // -------------- Tamagotchi Class
 class Tamagotchi {
-	constructor(id, food, energy, play, age){
+	constructor(id, food, energy, play){
 		this.id = id;
 		this.food = food || 10;
 		this.energy = energy || 10;
 		this.play = play || 10;
-		this.age = age || 1;
 	}
 }
-
 
 // -------------- Feed Class
 // class Feed {
@@ -69,7 +48,20 @@ class Tamagotchi {
 // }
 
 
-button.addEventListener('click', startCountdown);
+// -------------- Event Listeners 
+
+// Hatch Button
+hatchButton.addEventListener('click', startCountdown);
+
+// Feed Button
+foodButton.addEventListener('click', feed);
+
+// Sleep Button
+sleepButton.addEventListener('click', sleep);
+
+// Play Button 
+playButton.addEventListener('click', play);
+
 
 
 // -------------- Functions Execuded after hatch click
@@ -96,7 +88,7 @@ function updateCountdown() {
 }
 
 function pageSetup(){
-	button.remove(button);
+	hatchButton.remove(hatchButton);
 
 	document.getElementById('countdown').remove('countdown');
 
@@ -106,10 +98,7 @@ function pageSetup(){
 
 	createIcons();
 	ageIncrease();
-	// hungerLevel(pet[0]);
-	// energyLevel(pet[0]);
-	// playLevel(pet[0]);
-	// levelDecreaseStart();
+	levelDecreaseStart(pet[0]);
 
 }
 
@@ -124,9 +113,9 @@ function createIcons(){
 	const iconSection = document.querySelector('section');
 
   	icon1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
-		<meter id='meter1' value='10'></meter></i>`;
-	icon2.innerHTML = `<i id="energylevel" class="fas fa-sun"><meter id='meter2' value='10'></meter></i>`;
-	icon3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><meter id='meter3' value='10'></meter></i>`;
+		<progress id='progress1' value='10' max='10'></progress></i>`;
+	icon2.innerHTML = `<i id="energylevel" class="fas fa-sun"><progress id='progress2' value='10' max='10'></progress></i>`;
+	icon3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><progress id='progress3' value='10' max='10'></progress></i>`;
   	
   	iconSection.appendChild(icon1);
   	iconSection.appendChild(icon2);
@@ -152,58 +141,125 @@ function createIcons(){
 // -------------- Increase Age & Enable Game Ending 
 function ageIncrease(){
 	const birthday = setInterval(function () {
-    if (pet.age < 18) {
-      pet.age++;
+    if (age < 18) {
+      age++;
       updateAge();
     } else {
       clearInterval(birthday);
       gameOverCongrats();
   }
- }, 60000);
+ }, 10000);
 } 
 
 function updateAge() {
-  document.getElementById('age').innerText = `${age}`;
+	document.getElementById('age').innerText = `${age}`;
 }
 
 // Need to update further, revist. 
-// function gameOverCongrats(){
-// 	window.alert('Your Tamagotchi has been successully raised and graduated! Congratulations!')
-// }
+function gameOverCongrats(){
+	window.alert('Your Tamagotchi has been successully raised and graduated! Congratulations!')
+}
 
-// function gameOver(){
-// 	window.alert('Your Tamagotchi has moved on to another family')
-// }
+function gameOver(){
+	window.alert('Your Tamagotchi has moved on to another family')
+}
 
 // -------------- Pet Levels - Automatic Functions that are called once game starts 
-// function levelDecreaseStart(){
-//     if (foodlevel > 0 && hungerLevel > 0 && energylevel > 0) {
-//       hungerLevel();
-//       energyLevel();
-//       playLevel();
-//     } else {
-//       gameOver();
-//   }
-// }
 
-const levelsArray = [
-	function hungerLevel(pet){
-		const value = (document.getElementById('meter1').value = (pet.food - (Math.floor(Math.random() * 3) + 1)));
-		pet.food = value;
+function levelDecreaseStart(pet){
+	const level = setInterval(function () {
+    if (pet.food > 0 && pet.energy > 0 && pet.play > 0) {
+      randomLevel();
+    } else {
+      clearInterval(level);
+      gameOver();
+  }
+ }, 10000);
+} 
+
+const levelsArray = ['h', 'e', 'p']
+let randomFunc = '';
+
+function randomLevel(){
+	randomFunc = levelsArray[Math.floor(Math.random() * levelsArray.length)];
+	if (randomFunc === 'h'){
+		hungerLevel(pet[0]);
+		console.log('h');
+	} else if (randomFunc === 'e'){
+		energyLevel(pet[0]);
+		console.log('e');
+	} else if (randomFunc === 'p'){
+		playLevel(pet[0]);
+		console.log('p');
 	}
+}
 
-	function energyLevel(pet){
-		const value = document.getElementById('meter2').value = (pet.energy - (Math.floor(Math.random() * 3) + 1));
-		pet.energy = value;
-	}
+function hungerLevel(pet){
+	const value = (document.getElementById('progress1').value = (pet.food - (Math.floor(Math.random() * 2) + 1)));
+	pet.food = value;
+}
 
-	function playLevel(pet){
-		const value = document.getElementById('meter3').value = (pet.play - (Math.floor(Math.random() * 3) + 1));
-		pet.play = value;
-	}
-]
+function energyLevel(pet){
+	const value = document.getElementById('progress2').value = (pet.energy - (Math.floor(Math.random() * 2) + 1));
+	pet.energy = value;
+}
 
-
+function playLevel(pet){
+	const value = document.getElementById('progress3').value = (pet.play - (Math.floor(Math.random() * 2) + 1));
+	pet.play = value;
+}
 
 
 // -------------- Game Play - User controlled
+// const levelsArray = ['h', 'e', 'p']
+// let randomFunc = '';
+
+// function randomLevel(){
+// 	randomFunc = levelsArray[Math.floor(Math.random() * levelsArray.length)];
+// 	if (randomFunc === 'h'){
+// 		hungerLevel(pet[0]);
+// 		console.log('h');
+// 	} else if (randomFunc === 'e'){
+// 		energyLevel(pet[0]);
+// 		console.log('e');
+// 	} else if (randomFunc === 'p'){
+// 		playLevel(pet[0]);
+// 		console.log('p');
+// 	}
+// }
+
+
+function feed(){
+	foodUpdate(pet[0]);
+}
+
+function foodUpdate(pet){
+	const value = (document.getElementById('progress1').value = (pet.food + (Math.floor(Math.random() * 2) + 1)));
+	pet.food = value;
+}
+
+function sleep(){
+	sleepUpdate(pet[0]);
+}
+
+function sleepUpdate(pet){
+	const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
+	pet.energy = value;
+}
+
+function play(){
+	playUpdate(pet[0]);
+}
+
+function playUpdate(pet){
+	const value = (document.getElementById('progress3').value = (pet.play + (Math.floor(Math.random() * 2) + 1)));
+	pet.play = value;
+}
+
+
+
+
+
+
+
+
