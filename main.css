@@ -12,7 +12,7 @@ body {
 
 
 /* LEFT SIDE CONTENT */
-.leftside {
+#leftside {
 	display: flex;
 	flex-direction: column;
 }
@@ -64,7 +64,7 @@ body {
 
 
 /* GAME CONTAINER */
-.device{
+#device{
 	display:flex;
 	justify-content: center;
 	margin-top: 40px;
