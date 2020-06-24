@@ -1,4 +1,4 @@
-/* DOCUMENT STYLING */
+ /* DOCUMENT STYLING */
 * {
 	font-family: 'MuseoModerno', cursive;
 	box-sizing: border-box;
@@ -6,73 +6,107 @@
 
 body {
  	background-color: #DEF2F1;
- 	display:flex;
- 	flex-direction: column;
+ 	display: flex;
 }
 
-
 /* LEFT SIDE CONTENT */
+h1 {
+	align-self: flex-start;
+}
 #leftside {
 	display: flex;
 	flex-direction: column;
+	margin: auto;
 }
-
-#hatch{
-	border-radius: 10px;
-	font-size: 20px;
-	display:flex;
-	padding: 10px;
-	transition: all 0.2s;
-	color: #DEF2F1;
-	background-color: #687271;
-	width: 80px;
-	height: 60px;
-}
- #hatch:hover{
- 	color: #687271;
-	background-color: #DEF2F1;
- }
 
 #foodlevel{
 	color: #687271;
 	font-size:25px;
-	padding: 20px;
-	position: relative;
 }
 
 #energylevel{
 	color: #687271;
 	font-size:25px;
-	padding: 20px;
 }
 
 #playlevel{
 	color: #687271;
 	font-size:25px;
-	padding: 20px;
 }
-
 
 /*COME BACK TO THIS*/
 progress[value] {
   -webkit-appearance: none;
-  width: 250px;
-  height: 20px;
-  padding-left: 20px;
+  width: 20vh;
+  height: 2vh;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 progress[value]::-webkit-progress-bar {
   background-color: #AFBFBE;
-  border-radius: 2px;
 }
 
 progress[value]::-webkit-progress-value {
   	background-color: #687271;
-    border-radius: 2px;
+/*    border-radius: 2px;*/
 }
 
-/* GAME CONTAINER */
-#device{
+/* MIDDLE CONTENT */
+
+#middle {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+
+/* RIGHT SIDE CONTENT */
+
+#rightside {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+#hatch {
+	margin-top: 50px;
+	border-radius: 100%;
+	font-size: 25px;
+	color: #DEF2F1;
+	background-color: #687271;
+  	cursor: pointer;
+  	width: 20vh;
+  	height: 20vh;
+
+}
+ #hatch:hover {
+	transition: 0.02s;
+ 	color: #687271;
+	background-color: #DEF2F1;
+ }
+
+/*
+ #new-game {
+	border-radius: 100%;
+	font-size: 20px;
+	color: #DEF2F1;
+	background-color: #687271;
+  	cursor: pointer;
+  	text-align: center;
+  	padding: 0;
+  	width: 20vh;
+  	height: 20vh;
+}
+ #new-game:hover {
+	transition: 0.02s;
+ 	color: #687271;
+	background-color: #DEF2F1;
+ }*/
+
+/* GAME CONTAINER 
+/*#device{
 	display:flex;
 	justify-content: center;
 	margin-top: 40px;
@@ -110,11 +144,11 @@ progress[value]::-webkit-progress-value {
 	font-size: 180px;
 	align-self: center;
 	margin-left: 70px;
-}
+}*/
 
 
 /* PLAY BUTTONS */
-#gameplay {
+/*#gameplay {
 	display: flex;
 	justify-content: center;
 	transition: all 0.2s;

@@ -8,52 +8,47 @@
 	<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;600&display=swap" rel="stylesheet">
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="main.css">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<!-- JS -->
 	<script defer src="app.js"></script>
 	<title>project zero</title>
 </head>
-<body>
-	<header>
-      <h1>Tamagotchi</h1>
-    </header>
-	
+<body>	
 	<!-- Game Play and Pet Levels -->
 	<section id="leftside">
-		<button id="hatch">HATCH</button>
+		<h1>Tamagotchi</h1>
 		<!-- Food Levels -->
-		<!-- <i id="foodlevel" class="fas fa-utensils">
-		<progress></progress>
-		</i> -->
+		<i id="foodlevel" class="fas fa-utensils">
+			<progress value='10' max='10'></progress>
+		</i>
 		<!-- Energy Levels -->
-		<!-- <i id="energylevel" class="fas fa-sun">
-		<progress></progress>
-		</i> -->
+		<i id="energylevel" class="fas fa-sun">
+			<progress value='10' max='10'></progress>
+		</i>
 		<!-- Play Levels -->
-		<!-- <i id="playlevel" class="far fa-laugh-beam">
-		<progress></progress>
-		</i> -->
+		<i id="playlevel" class="far fa-laugh-beam">
+			<progress value='5' max='10'></progress>
+		</i>
 	</section>
 
-	<section id="rightside">
-		<p id="countdown">10s</p>
-	</section>
-
-	<section id="device">
+	<section id="middle">
+		<h2>Name</h2>
 		<div id='device-back'></div>
 		<div id="device-screen">
 			<i id="egg" class="fas fa-egg"></i>
-			<!-- <i id="cat" class="fas fa-cat"></i> -->
+			<i id="cat" class="fas fa-cat"></i>
+		</div>
+		<div id="gameplay">
+			<button id="feed">FEED</button>
+			<button id="sleep">SLEEP</button>
+			<button id="play">PLAY</button>
 		</div>
 	</section>
 
-	<div id="gameplay">
-		<button id="feed">FEED</button>
-		<button id="sleep">SLEEP</button>
-		<button id="play">PLAY</button>
-	</div>
-
+	<section id="rightside">
+		<button id="hatch">HATCH</button>
+		<!-- <button id="newgame">NEW GAME</button> -->
+		<p id="countdown">10s</p>
+	</section>
 
 </body>
 </html>

@@ -26,13 +26,13 @@ class Tamagotchi {
 hatchButton.addEventListener('click', startCountdown);
 
 // Feed Button
-foodButton.addEventListener('click', feed);
+foodButton.addEventListener('click', () => feed(pet[0]));
 
 // Sleep Button
-sleepButton.addEventListener('click', sleep);
+sleepButton.addEventListener('click', () => sleep(pet[0]));
 
 // Play Button 
-playButton.addEventListener('click', play);
+playButton.addEventListener('click', () => play(pet[0]));
 
 
 
@@ -62,7 +62,7 @@ function updateCountdown() {
 function pageSetup(){
 	hatchButton.remove(hatchButton);
 
-	document.getElementById('countdown').remove('countdown');
+	document.getElementById('countdown').remove();
 
 	const age = document.createElement('p');
 	age.innerHTML = `<p id="age">1</p>`;
@@ -184,11 +184,8 @@ function playLevel(pet){
 
 // -------------- Game Play - User controlled
 
-function feed(){
-	foodUpdate(pet[0]);
-}
 
-function foodUpdate(pet){
+function feed(pet){
 	if (pet.food < 10){
 		const value = (document.getElementById('progress1').value = (pet.food + (Math.floor(Math.random() * 2) + 1)));
 		pet.food = value;
@@ -197,11 +194,8 @@ function foodUpdate(pet){
 	}
 }
 
-function sleep(){
-	sleepUpdate(pet[0]);
-}
 
-function sleepUpdate(pet){
+function sleep(pet){
 	if (pet.energy < 10){
 		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
 		pet.energy = value;
@@ -210,11 +204,7 @@ function sleepUpdate(pet){
 	}
 }
 
-function play(){
-	playUpdate(pet[0]);
-}
-
-function playUpdate(pet){
+function play(pet){
 	if (pet.play < 10){
 		const value = (document.getElementById('progress3').value = (pet.play + (Math.floor(Math.random() * 2) + 1)));
 		pet.play = value;
