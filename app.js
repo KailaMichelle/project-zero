@@ -14,8 +14,7 @@ const submit = document.getElementById('submit');
 
 // -------------- Tamagotchi Class
 class Tamagotchi {
-	constructor(id, food, energy, play){
-		this.id = id;
+	constructor(food, energy, play){
 		this.food = food || 10;
 		this.energy = energy || 10;
 		this.play = play || 10;
@@ -44,7 +43,7 @@ playButton.addEventListener('click', () => play(pet[0]));
 // -------------- Functions Execuded after hatch click
 
 function addName(event){
-	const petName = document.querySelector('input').value;
+	let petName = document.querySelector('input').value;
 	const namePet = document.getElementById('name');
 	namePet.innerText = petName;
 
@@ -56,9 +55,15 @@ function addName(event){
 
 
 function hatchPet () {
-	pet.push(new Tamagotchi('Cat'));
-	// pageSetup();
-	// createButtons();
+	pet.push(new Tamagotchi());
+	const age = document.createElement('h2');
+	
+	age.innerHTML = `<h2 id="age">Age: 1</h2>`;
+	rightside.appendChild(age);
+
+	showIcons();
+	ageIncrease();
+	levelDecreaseStart(pet[0]);
 }
 
 function startCountdown() {
@@ -92,35 +97,28 @@ function pageSetup(){
 	hatchText.remove();
 
 	document.getElementById('form').style.display = 'flex';
-
-	// const age = document.createElement('h2');
-	// age.innerHTML = `<h2 id="age">Age: 1</h2>`;
-	// rightside.appendChild(age);
-
-	// createIcons();
-	// ageIncrease();
-	// levelDecreaseStart(pet[0]);
-
 }
 
 
 // -------------- Create Icons & Buttons
 
-function createIcons(){
-	const icon1 = document.createElement('icon');
-	const icon2 = document.createElement('icon');
-	const icon3 = document.createElement('icon');
+function showIcons(){
+	document.getElementById('levels').style.display = 'flex';
+	document.getElementById('gameplay').style.display = 'flex';
+	// const icon1 = document.createElement('icon');
+	// const icon2 = document.createElement('icon');
+	// const icon3 = document.createElement('icon');
 
-	const iconSection = document.getElementById('levels');
+	// const iconSection = document.getElementById('levels');
 
-  	icon1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
-		<progress id='progress1' value='10' max='10'></progress></i>`;
-	icon2.innerHTML = `<i id="energylevel" class="fas fa-sun"><progress id='progress2' value='10' max='10'></progress></i>`;
-	icon3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><progress id='progress3' value='10' max='10'></progress></i>`;
+ //  	icon1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
+	// 	<progress id='progress1' value='10' max='10'></progress></i>`;
+	// icon2.innerHTML = `<i id="energylevel" class="fas fa-sun"><progress id='progress2' value='10' max='10'></progress></i>`;
+	// icon3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><progress id='progress3' value='10' max='10'></progress></i>`;
   	
-  	iconSection.appendChild(icon1);
-  	iconSection.appendChild(icon2);
-  	iconSection.appendChild(icon3);
+ //  	iconSection.appendChild(icon1);
+ //  	iconSection.appendChild(icon2);
+ //  	iconSection.appendChild(icon3);
 }
 
 // function createButtons(){

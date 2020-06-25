@@ -33,8 +33,7 @@ h1 {
 }
 
 #levels {
-/*	background-color: red;*/
-	display: flex;
+	display: none;
 	flex-direction: column;
 }
 
@@ -131,7 +130,7 @@ progress[value]::-webkit-progress-value {
 #sleep{
   	cursor: pointer;
 	position: relative;
-	bottom: 340px;
+	bottom: 280px;
 }
 
 #sleep:hover{
@@ -142,7 +141,7 @@ progress[value]::-webkit-progress-value {
 #play{
   	cursor: pointer;
 	position: relative;
-	bottom: 350px;
+	bottom: 290px;
 }
 
 #play:hover{
@@ -153,7 +152,7 @@ progress[value]::-webkit-progress-value {
 #feed{
   	cursor: pointer;
 	position: relative;
-	bottom: 350px;
+	bottom: 290px;
 }
 
 #feed:hover{
