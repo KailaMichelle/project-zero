@@ -105,37 +105,8 @@ function pageSetup(){
 function showIcons(){
 	document.getElementById('levels').style.display = 'flex';
 	document.getElementById('gameplay').style.display = 'flex';
-	// const icon1 = document.createElement('icon');
-	// const icon2 = document.createElement('icon');
-	// const icon3 = document.createElement('icon');
-
-	// const iconSection = document.getElementById('levels');
-
- //  	icon1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
-	// 	<progress id='progress1' value='10' max='10'></progress></i>`;
-	// icon2.innerHTML = `<i id="energylevel" class="fas fa-sun"><progress id='progress2' value='10' max='10'></progress></i>`;
-	// icon3.innerHTML = `<i id="playlevel" class="far fa-laugh-beam"><progress id='progress3' value='10' max='10'></progress></i>`;
-  	
- //  	iconSection.appendChild(icon1);
- //  	iconSection.appendChild(icon2);
- //  	iconSection.appendChild(icon3);
 }
 
-// function createButtons(){
-// 	const b1 = document.createElement('button');
-// 	const b2 = document.createElement('button');
-// 	const b3 = document.createElement('button');
-
-// 	b1.innerHTML = `<button id="feed">FEED</button>`;
-// 	b2.innerHTML = `<button id="sleep">SLEEP</button>`;
-// 	b3.innerHTML = `<button id="play">PLAY</button>`;
-
-// 	const buttonSection = document.getElementById('gameplay');
-
-// 	buttonSection.appendChild(b1);
-// 	buttonSection.appendChild(b2);
-// 	buttonSection.appendChild(b3);
-// }
 
 // -------------- Increase Age & Enable Game Ending 
 function ageIncrease(){
