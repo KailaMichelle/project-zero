@@ -13,39 +13,45 @@
 	<title>project zero</title>
 </head>
 <body>	
-	<!-- Game Play and Pet Levels -->
-	<section id="leftside">
-		<h1>Tamagotchi</h1>
-		<!-- Food Levels -->
-		<!-- <i id="foodlevel" class="fas fa-utensils">
-			<progress value='10' max='10'></progress>
-		</i> -->
-		<!-- Energy Levels -->
-		<!-- <i id="energylevel" class="fas fa-sun">
-			<progress value='10' max='10'></progress>
-		</i> -->
-		<!-- Play Levels -->
-		<!-- <i id="playlevel" class="far fa-laugh-beam">
-			<progress value='5' max='10'></progress>
-		</i> -->
-	</section>
+	<main>
+		<!-- Left Side Content -->
+		<section id="leftside">
+			<h1>Tamagotchi</h1>
+			<div id="levels">
+				<!-- Food Levels -->
+				<i id="foodlevel" class="fas fa-utensils">
+					<progress value='10' max='10'></progress>
+				</i>
+				<!-- Energy Levels -->
+				<i id="energylevel" class="fas fa-sun">
+					<progress value='10' max='10'></progress>
+				</i>
+				<!-- Play Levels -->
+				<i id="playlevel" class="far fa-laugh-beam">
+					<progress value='5' max='10'></progress>
+				</i>
+			</div>
+		</section>
 
-	<section id="middle">
-		<img src="tamagotchi.png" alt="" width="600px" id="device">
-		<h2>Name</h2>
-		<div id="gameplay">
-			<button id="feed">FEED</button>
-			<button id="sleep">SLEEP</button>
-			<button id="play">PLAY</button>
-		</div>
-	</section>
+		<!-- Middle Content -->
+		<section id="middle">
+			<img src="tamagotchi.png" alt="" width="600px" id="device">
+			<h2>Name</h2>
+			<div id="gameplay">
+				<button id="feed">FEED</button>
+				<button id="sleep">SLEEP</button>
+				<button id="play">PLAY</button>
+			</div>
+		</section>
 
-	<section id="rightside">
-		<img src="EGG.png" alt="" width="100px" id="egg"><p id="hatch">HATCH</p>
-		<!-- <button id="hatch">HATCH</button> -->
-		<!-- <button id="newgame">NEW GAME</button> -->
-		<p id="countdown">10s</p>
-	</section>
+		<!-- Right Side Content -->
+		<section id="rightside">
+			<img src="EGG.png" alt="" width="100px" id="hatch"><p id="hatch-text">HATCH</p>
+			<!-- <button id="newgame">NEW GAME</button> -->
+			<p id="countdown">10s</p>
+		</section>
+
+	</main>
 
 </body>
 </html>

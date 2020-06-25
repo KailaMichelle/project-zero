@@ -82,7 +82,7 @@ function createIcons(){
 	const icon2 = document.createElement('icon');
 	const icon3 = document.createElement('icon');
 
-	const iconSection = document.querySelector('section');
+	const iconSection = document.getElementById('levels');
 
   	icon1.innerHTML = `<i id="foodlevel" class="fas fa-utensils">
 		<progress id='progress1' value='10' max='10'></progress></i>`;
