@@ -63,7 +63,7 @@ h1 {
 /*COME BACK TO THIS*/
 progress[value] {
   -webkit-appearance: none;
-  width: 10vw;
+  width: 12vw;
   height: 2.5vh;
   margin-bottom: 10px;
   margin-left: 20px;
@@ -99,6 +99,8 @@ progress[value]::-webkit-progress-value {
 #gameplay {
 	display: flex;
 	justify-content: center;
+	width: 350px;
+	justify-content: space-between;
 }
 
 #sleep{
@@ -106,50 +108,43 @@ progress[value]::-webkit-progress-value {
 	color: #687271;
   	cursor: pointer;
 	border: none;
-/*	position: relative;
-	margin-top: -420px;*/
-/*	margin-right: 40px;*/
+	position: relative;
+	bottom: 240px;
 }
-/*
+
 #sleep:hover{
-	color: #687271;
-	background-color: #96f4EE;
-}*/
+	transition: 0.02s;
+	opacity: 70%;
+}
 
 #play{
 	font-size: 20px;
 	color: #687271;
   	cursor: pointer;
 	border: none;
-/*	position: relative;
-	margin-top: -420px;*/
-/*	margin-right: 40px;*/
-/*	margin-top: -228px;
-	margin-right: 40px;*/
+	position: relative;
+	bottom: 260px;
 }
 
-/*#play:hover{
-	color: #687271;
-	background-color: #96f4EE;
-}*/
+#play:hover{
+	transition: 0.02s;
+	opacity: 70%; 
+}
 
 #feed{
 	font-size: 20px;
 	color: #687271;
   	cursor: pointer;
-	border: none;
-/*	position: relative;
-	margin-top: -420px;*/
-/*	margin-right: 40px;*/
-/*	margin-top: -228px;
-	margin-right: 40px;*/
+	border-radius: 100%;
+	position: relative;
+	bottom: 260px;
 }
 
-/*#feed:hover{
-	color: #687271;
-	background-color: #96f4EE;
+#feed:hover{
+	transition: 0.02s;
+	opacity: 70%;
 }
-*/
+
 
 /* RIGHT SIDE CONTENT */
 
@@ -173,8 +168,8 @@ progress[value]::-webkit-progress-value {
 	color: #687271;
 	background-color: #DEF2F1;
   	cursor: pointer;
-/*  	margin-right: 10px;
-  	margin-top: 5px;*/
+  	margin-top: 5px;
+  	padding: 0;
 }
 
  #hatch:hover {
