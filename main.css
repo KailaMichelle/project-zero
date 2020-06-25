@@ -7,50 +7,63 @@
 body {
  	background-color: #DEF2F1;
  	display: flex;
+ 	align-items: center;
+/* 	flex-wrap: wrap;*/
 }
 
 /* LEFT SIDE CONTENT */
-h1 {
-	align-self: flex-start;
-}
 #leftside {
 	display: flex;
 	flex-direction: column;
+	height: 100vh;
 	margin: auto;
+	margin-left: 40px;
+}
+
+h1 {
+	font-size: 40px;
+	color: #687271;
 }
 
 #foodlevel{
+	margin-right: 10px;
 	color: #687271;
-	font-size:25px;
+	font-size:40px;
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 #energylevel{
+	margin-right: 10px;
 	color: #687271;
-	font-size:25px;
+	font-size:40px;
+	margin-bottom: 40px;
 }
 
 #playlevel{
+	margin-right: 10px;
 	color: #687271;
-	font-size:25px;
+	font-size:40px;
 }
 
 /*COME BACK TO THIS*/
 progress[value] {
   -webkit-appearance: none;
   width: 20vh;
-  height: 2vh;
+  height: 2.5vh;
   margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 progress[value]::-webkit-progress-bar {
   background-color: #AFBFBE;
+  border-radius: 20px;
 }
 
 progress[value]::-webkit-progress-value {
-  	background-color: #687271;
-/*    border-radius: 2px;*/
+  	background-color: #47726F;
+  	border-radius: 20px;
 }
 
 /* MIDDLE CONTENT */
@@ -58,33 +71,97 @@ progress[value]::-webkit-progress-value {
 #middle {
 	display: flex;
 	flex-direction: column;
+	height: 100vh;
 	margin: auto;
 }
 
+#device {
+	margin-top: 40px;
+}
+
+#gameplay {
+	display: flex;
+	justify-content: center;
+}
+
+#sleep{
+	font-size: 20px;
+	color: #687271;
+  	cursor: pointer;
+	border: none;
+	position: relative;
+	margin-top: -420px;
+/*	margin-right: 40px;*/
+}
+/*
+#sleep:hover{
+	color: #687271;
+	background-color: #96f4EE;
+}*/
+
+#play{
+	font-size: 20px;
+	color: #687271;
+  	cursor: pointer;
+	border: none;
+	position: relative;
+	margin-top: -420px;
+/*	margin-right: 40px;*/
+/*	margin-top: -228px;
+	margin-right: 40px;*/
+}
+
+/*#play:hover{
+	color: #687271;
+	background-color: #96f4EE;
+}*/
+
+#feed{
+	font-size: 20px;
+	color: #687271;
+  	cursor: pointer;
+	border: none;
+	position: relative;
+	margin-top: -420px;
+/*	margin-right: 40px;*/
+/*	margin-top: -228px;
+	margin-right: 40px;*/
+}
+
+/*#feed:hover{
+	color: #687271;
+	background-color: #96f4EE;
+}
+*/
 
 /* RIGHT SIDE CONTENT */
 
 #rightside {
 	display: flex;
 	flex-direction: column;
+	height: 100vh;
 	margin: auto;
+	margin-left: 90px;
+}
+
+#egg {
+	margin-right: 10px;
+  	cursor: pointer;
+  	margin-top: 80px;
 }
 
 #hatch {
-	margin-top: 50px;
-	border-radius: 100%;
-	font-size: 25px;
-	color: #DEF2F1;
-	background-color: #687271;
-  	cursor: pointer;
-  	width: 20vh;
-  	height: 20vh;
-
-}
- #hatch:hover {
-	transition: 0.02s;
- 	color: #687271;
+	font-size: 35px;
+	color: #687271;
 	background-color: #DEF2F1;
+  	cursor: pointer;
+  	margin-right: 10px;
+  	margin-top: 5px;
+}
+
+ #egg:hover {
+	transition: 0.02s;
+	opacity: 70%;
  }
 
 /*
@@ -105,104 +182,4 @@ progress[value]::-webkit-progress-value {
 	background-color: #DEF2F1;
  }*/
 
-/* GAME CONTAINER 
-/*#device{
-	display:flex;
-	justify-content: center;
-	margin-top: 40px;
-}
 
-#device-back {
-	width: 600px;
-    height: 700px;
-    background: #AFBFBE;
-    border-radius: 70%;
-    display: flex;
-    align-self: center;
-	position: absolute; 
-}
-
-#device-screen {
-	width: 350px;
-    height: 380px;
-    background: #DEF2F1;
-    display: flex;
-    align-self: center;
-	position: absolute; 
-
-}
-
-#egg {
-	color:#687271;
-	font-size: 180px;
-	align-self: center;
-	margin-left: 100px;
-}
-
-#cat {
-	color:#687271;
-	font-size: 180px;
-	align-self: center;
-	margin-left: 70px;
-}*/
-
-
-/* PLAY BUTTONS */
-/*#gameplay {
-	display: flex;
-	justify-content: center;
-	transition: all 0.2s;
-}
-
-#sleep{
-	color: #DEF2F1;
-	background-color:#687271; 
-	font-size: 1.3em;
-	border-radius: 50%;
-	padding: 10px;
-	margin-top: 210px;
-	margin-right: 20px;
-	margin-left: 20px;
-	width: 80px;
-	height: 80px;
-	position: relative;
-}
-
-#sleep:hover{
-	color: #687271;
-	background-color: #96f4EE;
-}
-
-#play{
-	color: #DEF2F1;
-	background-color:#687271; 
-	font-size: 1.3em;
-	border-radius: 50%;
-	padding: 10px;
-	margin-top: 210px;
-	width: 80px;
-	height: 80px;
-	position: relative;
-}
-
-#play:hover{
-	color: #687271;
-	background-color: #96f4EE;
-}
-
-#feed{
-	color: #DEF2F1;
-	background-color:#687271; 
-	font-size: 1.3em;
-	border-radius: 50%;
-	padding: 10px;
-	margin-top: 210px;
-	width: 80px;
-	height: 80px;
-	position: relative;
-}
-
-#feed:hover{
-	color: #687271;
-	background-color: #96f4EE;
-}
