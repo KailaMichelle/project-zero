@@ -11,7 +11,7 @@ body {
 main{
   width: 100vw;
   min-height: 100vh;
-  background: white;
+/*  background: white;*/
   display: flex;
   justify-content: center;
 }
@@ -20,7 +20,7 @@ main{
 #leftside {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: pink;
+/*	background-color: pink;*/
 	display: flex;
 	flex-direction: column;
 	flex: 1;
@@ -35,7 +35,7 @@ h1 {
 }
 
 #levels {
-	background-color: red;
+/*	background-color: red;*/
 	display: flex;
 	flex-direction: column;
 }
@@ -85,7 +85,7 @@ progress[value]::-webkit-progress-value {
 #middle {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: purple;
+/*	background-color: purple;*/
 	display: flex;
 	flex-direction: column;
 	flex: 1;
@@ -94,6 +94,15 @@ progress[value]::-webkit-progress-value {
 
 #device {
 /*	margin-top: 40px;*/
+}
+
+#name {
+	font-size: 35px;
+	color: #687271;
+	position: relative;
+	bottom: 600px;
+	left: 140px;
+	align-self: flex-start;
 }
 
 #gameplay {
@@ -109,7 +118,7 @@ progress[value]::-webkit-progress-value {
   	cursor: pointer;
 	border: none;
 	position: relative;
-	bottom: 240px;
+	bottom: 270px;
 }
 
 #sleep:hover{
@@ -123,7 +132,7 @@ progress[value]::-webkit-progress-value {
   	cursor: pointer;
 	border: none;
 	position: relative;
-	bottom: 260px;
+	bottom: 290px;
 }
 
 #play:hover{
@@ -137,7 +146,7 @@ progress[value]::-webkit-progress-value {
   	cursor: pointer;
 	border-radius: 100%;
 	position: relative;
-	bottom: 260px;
+	bottom: 290px;
 }
 
 #feed:hover{
@@ -151,7 +160,7 @@ progress[value]::-webkit-progress-value {
 #rightside {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: blue;
+/*	background-color: blue;*/
 	display: flex;
 	flex-direction: column;
 	flex: 1;
@@ -163,19 +172,17 @@ progress[value]::-webkit-progress-value {
 	margin-top: 30px;
 }
 
-#hatch-text {
-	font-size: 35px;
-	color: #687271;
-	background-color: #DEF2F1;
-  	cursor: pointer;
-  	margin-top: 5px;
-  	padding: 0;
-}
-
  #hatch:hover {
 	transition: 0.02s;
 	opacity: 70%;
  }
+
+#hatch-text {
+	font-size: 35px;
+	color: #687271;
+  	margin-top: 5px;
+  	padding: 0;
+}
 
 /*
  #new-game {
