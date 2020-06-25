@@ -1,14 +1,16 @@
 // App State
-let time = 2;
+let time = 6;
 let age = 1;
 const pet = [];
 
 // Cached DOM Elements 
 const rightside = document.getElementById('rightside');
 const hatchButton = document.getElementById('hatch');
+const hatchText = document.getElementById('hatchtext');
 const foodButton = document.getElementById('feed');
 const sleepButton = document.getElementById('sleep');
 const playButton = document.getElementById('play');
+const submit = document.getElementById('submit');
 
 // -------------- Tamagotchi Class
 class Tamagotchi {
@@ -25,6 +27,9 @@ class Tamagotchi {
 // Hatch Button
 hatchButton.addEventListener('click', startCountdown);
 
+// Pet Name
+submit.addEventListener('click', addName);
+
 // Feed Button
 foodButton.addEventListener('click', () => feed(pet[0]));
 
@@ -37,40 +42,64 @@ playButton.addEventListener('click', () => play(pet[0]));
 
 
 // -------------- Functions Execuded after hatch click
+
+function addName(event){
+	const petName = document.querySelector('input').value;
+	const namePet = document.getElementById('name');
+	namePet.innerText = petName;
+
+	document.querySelector('input').remove();
+	document.getElementById('submit').remove();
+
+	hatchPet();	
+}
+
+
 function hatchPet () {
 	pet.push(new Tamagotchi('Cat'));
-	pageSetup();
+	// pageSetup();
 	// createButtons();
 }
 
 function startCountdown() {
   const timer = setInterval(function () {
-    if (time > 0) {
+    if (time > 1) {
       time--;
       updateCountdown();
     } else {
       clearInterval(timer);
-      hatchPet();
+      pageSetup();
+      // namePet();
+      // hatchPet();
   }
  }, 1000);
 } 
 
 function updateCountdown() {
-  document.getElementById('countdown').innerText = `${time}s`;
+	if (time === 5){
+		hatchButton.src = "images/EGG2.png";
+	} if (time === 4){
+		hatchButton.src = "images/EGG3.png"; 
+	} if (time === 3){
+		hatchButton.src = "images/EGG4.png";
+	} else if (time === 2){
+		hatchButton.src = "images/EGG5.png";
+	}
 }
 
 function pageSetup(){
-	hatchButton.remove(hatchButton);
+	hatchButton.remove();
+	hatchText.remove();
 
-	document.getElementById('countdown').remove();
+	document.getElementById('form').style.display = 'flex';
 
-	const age = document.createElement('p');
-	age.innerHTML = `<p id="age">1</p>`;
-	rightside.appendChild(age);
+	// const age = document.createElement('h2');
+	// age.innerHTML = `<h2 id="age">Age: 1</h2>`;
+	// rightside.appendChild(age);
 
-	createIcons();
-	ageIncrease();
-	levelDecreaseStart(pet[0]);
+	// createIcons();
+	// ageIncrease();
+	// levelDecreaseStart(pet[0]);
 
 }
 
@@ -120,11 +149,11 @@ function ageIncrease(){
       clearInterval(birthday);
       gameOverCongrats();
   }
- }, 10000);
+ }, 60000);
 } 
 
 function updateAge() {
-	document.getElementById('age').innerText = `${age}`;
+	document.getElementById('age').innerText = `Age: ${age}`;
 }
 
 // Need to update further, revist. 

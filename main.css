@@ -11,7 +11,6 @@ body {
 main{
   width: 100vw;
   min-height: 100vh;
-/*  background: white;*/
   display: flex;
   justify-content: center;
 }
@@ -20,7 +19,6 @@ main{
 #leftside {
 	width: 100vw;
 	min-height: 100vh;
-/*	background-color: pink;*/
 	display: flex;
 	flex-direction: column;
 	flex: 1;
@@ -85,24 +83,41 @@ progress[value]::-webkit-progress-value {
 #middle {
 	width: 100vw;
 	min-height: 100vh;
-/*	background-color: purple;*/
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	align-items: center;
 }
 
-#device {
-/*	margin-top: 40px;*/
+#form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	display: none;
+}
+
+#input {
+	font-size: 15px;
+	color: #687271;
+	background-color: #DEF2F1;
+	position: relative;
+	bottom: 600px;
+}
+
+#submit {
+	font-size: 15px;
+	color: #687271;
+	background-color: #DEF2F1;
+	position: relative;
+	bottom: 580px;
+	align-self: center;
 }
 
 #name {
 	font-size: 35px;
-	color: #687271;
+	color: #47726F;
 	position: relative;
-	bottom: 600px;
-	left: 140px;
-	align-self: flex-start;
+	bottom: 580px;
 }
 
 #gameplay {
@@ -110,15 +125,13 @@ progress[value]::-webkit-progress-value {
 	justify-content: center;
 	width: 350px;
 	justify-content: space-between;
+	display: none;
 }
 
 #sleep{
-	font-size: 20px;
-	color: #687271;
   	cursor: pointer;
-	border: none;
 	position: relative;
-	bottom: 270px;
+	bottom: 340px;
 }
 
 #sleep:hover{
@@ -127,12 +140,9 @@ progress[value]::-webkit-progress-value {
 }
 
 #play{
-	font-size: 20px;
-	color: #687271;
   	cursor: pointer;
-	border: none;
 	position: relative;
-	bottom: 290px;
+	bottom: 350px;
 }
 
 #play:hover{
@@ -141,12 +151,9 @@ progress[value]::-webkit-progress-value {
 }
 
 #feed{
-	font-size: 20px;
-	color: #687271;
   	cursor: pointer;
-	border-radius: 100%;
 	position: relative;
-	bottom: 290px;
+	bottom: 350px;
 }
 
 #feed:hover{
@@ -160,7 +167,6 @@ progress[value]::-webkit-progress-value {
 #rightside {
 	width: 100vw;
 	min-height: 100vh;
-/*	background-color: blue;*/
 	display: flex;
 	flex-direction: column;
 	flex: 1;
@@ -169,7 +175,7 @@ progress[value]::-webkit-progress-value {
 
 #hatch {
   	cursor: pointer;
-	margin-top: 30px;
+	margin-top: 70px;
 }
 
  #hatch:hover {
@@ -177,10 +183,17 @@ progress[value]::-webkit-progress-value {
 	opacity: 70%;
  }
 
-#hatch-text {
+#hatchtext {
 	font-size: 35px;
 	color: #687271;
   	margin-top: 5px;
+  	padding: 0;
+}
+
+#age {
+	font-size: 35px;
+	color: #687271;
+  	margin-top: 70px;
   	padding: 0;
 }
 

@@ -19,36 +19,41 @@
 			<h1>Tamagotchi</h1>
 			<div id="levels">
 				<!-- Food Levels -->
-				<i id="foodlevel" class="fas fa-utensils">
+				<!-- <i id="foodlevel" class="fas fa-utensils">
 					<progress value='10' max='10'></progress>
-				</i>
+				</i> -->
 				<!-- Energy Levels -->
-				<i id="energylevel" class="fas fa-sun">
+				<!-- <i id="energylevel" class="fas fa-sun">
 					<progress value='10' max='10'></progress>
-				</i>
+				</i> -->
 				<!-- Play Levels -->
-				<i id="playlevel" class="far fa-laugh-beam">
-					<progress value='5' max='10'></progress>
-				</i>
+				<!-- <i id="playlevel" class="far fa-laugh-beam">
+					<progress value='10' max='10'></progress>
+				</i> -->
 			</div>
 		</section>
 
 		<!-- Middle Content -->
 		<section id="middle">
-			<img src="tamagotchi.png" alt="device" width="600px" id="device">
-			<h2 id="name">Name:</h2>
+			<img src="images/tamagotchi.png" alt="device" width="600px" id="device">
+			
+			<article id="form">
+				<h2 id="name">Name:</h2>
+				<input type="text" id="input">
+				<button id="submit">Submit</button>
+			</article>
+		
 			<div id="gameplay">
-				<img src="feedbtn.png" alt="feed button" width="100px" id="feed">
-				<img src="sleepbtn.png" alt="sleep button" width="100px" id="sleep">
-				<img src="playbtn.png" alt="play button" width="100px" id="play">
+				<img src="images/feedbtn.png" alt="feed button" width="100px" id="feed">
+				<img src="images/sleepbtn.png" alt="sleep button" width="100px" id="sleep">
+				<img src="images/playbtn.png" alt="play button" width="100px" id="play">
 			</div>
 		</section>
 
 		<!-- Right Side Content -->
 		<section id="rightside">
-			<img src="EGG.png" alt="" width="100px" id="hatch"><p id="hatch-text">HATCH</p>
+			<img src="images/EGG.png" alt="" width="100px" id="hatch"><p id="hatchtext">HATCH</p>
 			<!-- <button id="newgame">NEW GAME</button> -->
-			<p id="countdown">10s</p>
 		</section>
 
 	</main>
