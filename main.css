@@ -237,6 +237,12 @@ progress[value]::-webkit-progress-value {
 	padding: 0;
 }
 
+#grow {
+	display: none;
+	font-size: 20px;
+	color: #687271;
+	padding: 90px;
+}
 
 @keyframes shake {
 	0% {

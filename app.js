@@ -25,6 +25,7 @@ const rightside = document.getElementById('rightside');
 const name = document.getElementById('name');
 const hatchButton = document.getElementById('hatch');
 const hatchText = document.getElementById('hatchtext');
+const grow = document.getElementById('grow');
 
 
 // -------------- Tamagotchi Class
@@ -131,9 +132,9 @@ function ageIncrease(){
       updatePet();
     } else {
       clearInterval(birthday);
-      gameOverCongrats();
+      gameOverCongrats(pet[0]);
   }
- }, 5000); //Actual Game: Age would increase one year per minute.
+ }, 3000); //Actual Game: Age would increase one year per minute.
 } 
 
 function updateAge() {
@@ -146,19 +147,27 @@ function updatePet() {
 		foodButton.style.bottom = '340px'
 		playButton.style.bottom = '340px'
 		sleepButton.style.bottom = '320px'
-		window.alert('Your pet is a toddler!');
+		grow.style.display = 'flex';
+	}if (age === 5){
+		grow.style.display = 'none';
 	} if (age === 8){
 		petImage.src = "images/PET3.png"; 
 		foodButton.style.bottom = '320px'
 		playButton.style.bottom = '320px'
 		sleepButton.style.bottom = '300px'
-		window.alert('Your pet is growing up fast!');
-	} else if (age === 12){
+		grow.style.display = 'flex';
+		grow.innerText = 'Your pet is growing up so fast!';
+	}if (age === 9){
+		grow.style.display = 'none';
+	} if (age === 12){
 		petImage.src = "images/PET4.png";
 		foodButton.style.bottom = '370px'
 		playButton.style.bottom = '370px'
 		sleepButton.style.bottom = '350px'
-		window.alert('Your pet is growing again!');
+		grow.style.display = 'flex';
+		grow.innerText = ('Your pet is fully grown!');
+	} else if (age === 13){
+		grow.style.display = 'none';
 	}
 }
 
@@ -193,17 +202,17 @@ function randomLevel(){
 }
 
 function hungerLevel(pet){
-	const value = (document.getElementById('progress1').value = (pet.food - (Math.floor(Math.random() * 2) + 1)));
+	const value = (document.getElementById('progress1').value = (pet.food - (Math.floor(Math.random() * 3) + 1)));
 	pet.food = value;
 }
 
 function energyLevel(pet){
-	const value = document.getElementById('progress2').value = (pet.energy - (Math.floor(Math.random() * 2) + 1));
+	const value = document.getElementById('progress2').value = (pet.energy - (Math.floor(Math.random() * 3) + 1));
 	pet.energy = value;
 }
 
 function playLevel(pet){
-	const value = document.getElementById('progress3').value = (pet.play - (Math.floor(Math.random() * 2) + 1));
+	const value = document.getElementById('progress3').value = (pet.play - (Math.floor(Math.random() * 3) + 1));
 	pet.play = value;
 }
 
@@ -213,7 +222,7 @@ function playLevel(pet){
 
 function feed(pet){
 	if (pet.food < 10){
-		const value = (document.getElementById('progress1').value = (pet.food + (Math.floor(Math.random() * 2) + 1)));
+		const value = (document.getElementById('progress1').value = (pet.food + (Math.floor(Math.random() * 3) + 1)));
 		pet.food = value;
 	} else {
 		window.alert(`Your pet is full!`)
@@ -222,7 +231,7 @@ function feed(pet){
 
 function sleepMode(pet){
 	if (pet.energy < 10){
-		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
+		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 3) + 1)));
 		pet.energy = value;
 		body.style.backgroundColor = '#687271';
 		levels.style.display = 'none';
@@ -244,22 +253,17 @@ function wakeUp(){
 
 function play(pet){
 	if (pet.play < 10){
-		const value = (document.getElementById('progress3').value = (pet.play + (Math.floor(Math.random() * 2) + 1)));
+		const value = (document.getElementById('progress3').value = (pet.play + (Math.floor(Math.random() * 3) + 1)));
 		pet.play = value;
 	} else {
 		window.alert(`Your pet doesn't want to play`)
 	}
 }
 
-
-function gameOverCongrats(){
-	levels.remove();
-	gameplay.remove();
-	document.getElementById('congrats').style.display = 'flex';
-
-}
+// -------------- Game Over
 
 function gameOver(){
+	age = 20; 
 	petImage.remove();
 	levels.remove();
 	gameplay.remove();
@@ -267,5 +271,16 @@ function gameOver(){
 	document.getElementById('age').remove();
 	document.getElementById('sorry').style.display = 'flex';
 }
+
+function gameOverCongrats(pet){
+	if(pet.food > 0 && pet.energy > 0 && pet.play > 0){
+		levels.remove();
+		gameplay.remove();
+		document.getElementById('congrats').style.display = 'flex';
+	} else {
+		gameOver();
+	}
+}
+
 
 
