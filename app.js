@@ -136,6 +136,9 @@ function updatePet() {
 		window.alert('Your pet is growing up fast!');
 	} else if (age === 12){
 		petImage.src = "images/PET4.png";
+		foodButton.style.bottom = '370px'
+		playButton.style.bottom = '370px'
+		sleepButton.style.bottom = '350px'
 		window.alert('Your pet is growing again!');
 	}
 }
