@@ -1,7 +1,6 @@
 # project-zero
----
+
 ## User Story
-<br>
 
 1. The user presses start and their tamagatchi will hatch after 5 seconds.
 
