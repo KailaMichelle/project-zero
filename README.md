@@ -1,7 +1,6 @@
 # project-zero
 ---
 ## User Story
----
 <br>
 
 1. The user presses start and their tamagatchi will hatch after 5 seconds.
@@ -20,9 +19,8 @@
 5. If the tomagatchi reaches the age of 18 and has all levels above 1 the game is concluded and the user has successfully raised a tamagotchi.
 
 6. User can hatch a new tomagatchi or end game play. 
-<br>
 
---
+---
 ##Wireframe
---
+<br>
 https://xd.adobe.com/view/8894d8ec-723f-44e8-80b9-347b276210be-ddc7/
