@@ -20,6 +20,6 @@
 6. User can hatch a new tomagatchi or end game play. 
 
 ---
-##Wireframe
-<br>
+## Wireframe
+
 https://xd.adobe.com/view/8894d8ec-723f-44e8-80b9-347b276210be-ddc7/

@@ -171,7 +171,8 @@ function updatePet() {
 	}
 }
 
-// -------------- Pet Levels - Automatic Functions that are called once game starts 
+// -------------- Pet Levels 
+// Automatic Functions that are called once game starts 
 
 function levelDecreaseStart(pet){
 	const level = setInterval(function () {
