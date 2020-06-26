@@ -87,6 +87,22 @@ progress[value]::-webkit-progress-value {
 	opacity: 70%;
 }
 
+#congrats {
+	display: none;
+	margin-left: 50px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #687271;
+}
+
+#sorry {
+	display: none;
+	margin-left: 50px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #687271;
+}
+
 /* MIDDLE CONTENT */
 
 #middle {
@@ -102,8 +118,8 @@ progress[value]::-webkit-progress-value {
 	display: none;
 	position: relative;
 	bottom: 450px;
+	animation: shake 4s infinite;
 }
-
 
 #form {
 	display: none;
@@ -222,23 +238,13 @@ progress[value]::-webkit-progress-value {
 }
 
 
+@keyframes shake {
+	0% {
+		transform: scale(0.90);
+	}
 
-/*
- #new-game {
-	border-radius: 100%;
-	font-size: 20px;
-	color: #DEF2F1;
-	background-color: #687271;
-  	cursor: pointer;
-  	text-align: center;
-  	padding: 0;
-  	width: 20vh;
-  	height: 20vh;
+	70% {
+		transform: scale(1);
+	}
 }
- #new-game:hover {
-	transition: 0.02s;
- 	color: #687271;
-	background-color: #DEF2F1;
- }*/
-
 

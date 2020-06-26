@@ -4,15 +4,28 @@ let age = 1;
 const pet = [];
 
 // Cached DOM Elements 
-const rightside = document.getElementById('rightside');
-const hatchButton = document.getElementById('hatch');
-const hatchText = document.getElementById('hatchtext');
+const body = document.querySelector('body');
+
+// Leftside Elements
+const levels = document.getElementById('levels');
+const awake = document.getElementById('awake');
+
+// Middle elements 
+const device =	document.getElementById('device');
+const petImage = document.getElementById('pet');
+const submit = document.getElementById('submit');
+const input = document.querySelector('input');
+const gameplay = document.getElementById('gameplay');
 const foodButton = document.getElementById('feed');
 const sleepButton = document.getElementById('sleep');
 const playButton = document.getElementById('play');
-const submit = document.getElementById('submit');
-const petImage = document.getElementById('pet');
-const awake = document.getElementById('awake');
+
+// Right Side Elements 
+const rightside = document.getElementById('rightside');
+const name = document.getElementById('name');
+const hatchButton = document.getElementById('hatch');
+const hatchText = document.getElementById('hatchtext');
+
 
 // -------------- Tamagotchi Class
 class Tamagotchi {
@@ -81,9 +94,9 @@ function addName(event){
 	petnamed.innerHTML = `<p id="pet-name">${petName}</p>`;
 	rightside.appendChild(petnamed);
 
-	document.getElementById('name').remove();
-	document.querySelector('input').remove();
-	document.getElementById('submit').remove();
+	name.remove();
+	input.remove();
+	submit.remove();
 
 	hatchPet();	
 }
@@ -103,9 +116,9 @@ function hatchPet () {
 // -------------- Show Icons & Buttons
 
 function showIcons(){
-	document.getElementById('levels').style.display = 'flex';
-	document.getElementById('gameplay').style.display = 'flex';
-	document.getElementById('pet').style.display = 'flex';
+	levels.style.display = 'flex';
+	gameplay.style.display = 'flex';
+	petImage.style.display = 'flex';
 }
 
 
@@ -120,7 +133,7 @@ function ageIncrease(){
       clearInterval(birthday);
       gameOverCongrats();
   }
- }, 5000);
+ }, 5000); //Actual Game: Age would increase one year per minute.
 } 
 
 function updateAge() {
@@ -130,9 +143,15 @@ function updateAge() {
 function updatePet() {
 	if (age === 4){
 		petImage.src = "images/PET2.png";
+		foodButton.style.bottom = '340px'
+		playButton.style.bottom = '340px'
+		sleepButton.style.bottom = '320px'
 		window.alert('Your pet is a toddler!');
 	} if (age === 8){
 		petImage.src = "images/PET3.png"; 
+		foodButton.style.bottom = '320px'
+		playButton.style.bottom = '320px'
+		sleepButton.style.bottom = '300px'
 		window.alert('Your pet is growing up fast!');
 	} else if (age === 12){
 		petImage.src = "images/PET4.png";
@@ -147,13 +166,13 @@ function updatePet() {
 
 function levelDecreaseStart(pet){
 	const level = setInterval(function () {
-    if (pet.food > 0 && pet.energy > 0 && pet.play > 0) {
+    if (pet.food > 0 && pet.energy > 0 && pet.play > 0 && age < 18) {
       randomLevel();
-    } else {
+    } else if (pet.food <= 0 || pet.energy <= 0 || pet.play <= 0) {
       clearInterval(level);
       gameOver();
   }
- }, 10000);
+ }, 3000); 
 } 
 
 const levelsArray = ['h', 'e', 'p']
@@ -205,22 +224,22 @@ function sleepMode(pet){
 	if (pet.energy < 10){
 		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
 		pet.energy = value;
-		document.querySelector('body').style.backgroundColor = '#687271';
-		document.getElementById('levels').style.display = 'none';
-		document.getElementById('gameplay').style.display = 'none';
-		document.getElementById('device').src = "images/tamagotchiNight.png"
-		document.getElementById('awake').style.display = 'flex';
+		body.style.backgroundColor = '#687271';
+		levels.style.display = 'none';
+		gameplay.style.display = 'none';
+		device.src = "images/tamagotchiNight.png"
+		awake.style.display = 'flex';
 	} else {
 		window.alert(`Your pet isn't tired!`)
 	}  
 }
 
 function wakeUp(){
-		document.querySelector('body').style.backgroundColor = '#DEF2F1';
-		document.getElementById('levels').style.display = 'flex';
-		document.getElementById('gameplay').style.display = 'flex';
-		document.getElementById('device').src = "images/tamagotchi.png"
-		document.getElementById('awake').style.display = 'none';
+	body.style.backgroundColor = '#DEF2F1';
+	levels.style.display = 'flex';
+	gameplay.style.display = 'flex';
+	device.src = "images/tamagotchi.png"
+	awake.style.display = 'none';
 }
 
 function play(pet){
@@ -233,13 +252,20 @@ function play(pet){
 }
 
 
-// Need to update further, revist. 
 function gameOverCongrats(){
-	window.alert('Your Tamagotchi has been successully raised and graduated! Congratulations!')
+	levels.remove();
+	gameplay.remove();
+	document.getElementById('congrats').style.display = 'flex';
+
 }
 
 function gameOver(){
-	window.alert('Your Tamagotchi has moved on to another family')
+	petImage.remove();
+	levels.remove();
+	gameplay.remove();
+	document.getElementById('pet-name').remove();
+	document.getElementById('age').remove();
+	document.getElementById('sorry').style.display = 'flex';
 }
 
 
