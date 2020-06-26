@@ -8,7 +8,7 @@ body {
 	background-color: #DEF2F1;
 }
 
-.light {
+main {
   width: 100vw;
   min-height: 100vh;
   display: flex;
