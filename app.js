@@ -12,6 +12,7 @@ const sleepButton = document.getElementById('sleep');
 const playButton = document.getElementById('play');
 const submit = document.getElementById('submit');
 const petImage = document.getElementById('pet');
+const awake = document.getElementById('awake');
 
 // -------------- Tamagotchi Class
 class Tamagotchi {
@@ -39,7 +40,8 @@ sleepButton.addEventListener('click', () => sleepMode(pet[0]));
 // Play Button 
 playButton.addEventListener('click', () => play(pet[0]));
 
-
+// Wake Up Button 
+awake.addEventListener('click', wakeUp);
 
 // -------------- Functions Execuded after hatch click
 function startCountdown() {
@@ -198,21 +200,24 @@ function feed(pet){
 
 function sleepMode(pet){
 	if (pet.energy < 10){
+		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
+		pet.energy = value;
 		document.querySelector('body').style.backgroundColor = '#687271';
 		document.getElementById('levels').style.display = 'none';
 		document.getElementById('gameplay').style.display = 'none';
 		document.getElementById('device').src = "images/tamagotchiNight.png"
-		document.getElementById('pet').src = "images/zzz.png"
-		// petImage.src = "images/zzz.png";
-		sleep(pet[0]);
+		document.getElementById('awake').style.display = 'flex';
 	} else {
 		window.alert(`Your pet isn't tired!`)
-	}
+	}  
 }
 
-function sleep(pet){
-		const value = (document.getElementById('progress2').value = (pet.energy + (Math.floor(Math.random() * 2) + 1)));
-		pet.energy = value;
+function wakeUp(){
+		document.querySelector('body').style.backgroundColor = '#DEF2F1';
+		document.getElementById('levels').style.display = 'flex';
+		document.getElementById('gameplay').style.display = 'flex';
+		document.getElementById('device').src = "images/tamagotchi.png"
+		document.getElementById('awake').style.display = 'none';
 }
 
 function play(pet){

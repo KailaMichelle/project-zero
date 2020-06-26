@@ -57,7 +57,6 @@ h1 {
 	margin-left: 50px;
 }
 
-/*COME BACK TO THIS*/
 progress[value] {
   -webkit-appearance: none;
   width: 12vw;
@@ -75,6 +74,17 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   	background-color: #47726F;
   	border-radius: 20px;
+}
+
+#awake {
+	display: none;
+	margin-left: 50px;
+	cursor: pointer;
+}
+
+#awake:hover {
+	transition: 0.02s;
+	opacity: 70%;
 }
 
 /* MIDDLE CONTENT */
