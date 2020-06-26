@@ -5,10 +5,10 @@
 }
 
 body {
- 	background-color: #DEF2F1;
+	background-color: #DEF2F1;
 }
 
-main{
+.light {
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -88,11 +88,16 @@ progress[value]::-webkit-progress-value {
 	align-items: center;
 }
 
+#pet{
+	display: none;
+	position: absolute;
+	bottom: 300px;
+}
+
 #form {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
-	display: none;
 }
 
 #input {
@@ -116,21 +121,20 @@ progress[value]::-webkit-progress-value {
 	font-size: 35px;
 	color: #47726F;
 	position: relative;
-	bottom: 580px;
+	bottom: 600px;
 }
 
 #gameplay {
-	display: flex;
+	display: none;
 	justify-content: center;
 	width: 350px;
 	justify-content: space-between;
-	display: none;
 }
 
 #sleep{
   	cursor: pointer;
 	position: relative;
-	bottom: 280px;
+	bottom: 160px;
 }
 
 #sleep:hover{
@@ -141,7 +145,7 @@ progress[value]::-webkit-progress-value {
 #play{
   	cursor: pointer;
 	position: relative;
-	bottom: 290px;
+	bottom: 180px;
 }
 
 #play:hover{
@@ -152,7 +156,7 @@ progress[value]::-webkit-progress-value {
 #feed{
   	cursor: pointer;
 	position: relative;
-	bottom: 290px;
+	bottom: 180px;
 }
 
 #feed:hover{
@@ -189,12 +193,24 @@ progress[value]::-webkit-progress-value {
   	padding: 0;
 }
 
-#age {
+#pet-name {
 	font-size: 35px;
+	font-weight: bold;
 	color: #687271;
   	margin-top: 70px;
+  	margin-bottom: 0;
   	padding: 0;
 }
+
+#age {
+	font-size: 35px;
+	font-weight: bold;
+	color: #687271;
+	margin-top: 0;
+	padding: 0;
+}
+
+
 
 /*
  #new-game {
